@@ -22,8 +22,6 @@
 	" }
 " } 
 	
-let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
-let g:vimclojure#ParenRainbow=1 
 " General {
 	"set background=dark         " Assume a dark background
 	"set term=builtin_ansi       " Make arrow and other keys work
@@ -41,7 +39,7 @@ let g:vimclojure#ParenRainbow=1
 	"set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	"set virtualedit=onemore 	   	" allow for cursor beyond last character
 	set history=1000  				" Store a ton of history (default is 20)
-	"set spell 		 	        	" spell checking on
+	set nospell 		 	        	" spell checking off
 	
 	" Setting up the directories {
 		"set backup 						" backups are nice ...
@@ -176,6 +174,10 @@ let g:vimclojure#ParenRainbow=1
 		let g:NERDShutUp=1
 
 		let b:match_ignorecase = 1
+	" }	
+	
+	" NERDTRee {
+		cnoreabbr nt NERDTree 
 	" }
 
 	" ShowMarks {
@@ -249,10 +251,10 @@ let g:vimclojure#ParenRainbow=1
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
-  " Clojure {
-    let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
-    let g:vimclojure#ParenRainbow=1 
-  " }
+	" Clojure {
+		let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
+		let g:vimclojure#ParenRainbow=1 
+	" }
 " }
 
 " GUI Settings {
