@@ -7,9 +7,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/spf13-vim-colors"]
-	path = .vim/bundle/spf13-vim-colors
-	url = git://github.com/spf13/vim-colors.git
 [submodule ".vim/bundle/snipmate-snippets"]
 	path = .vim/bundle/snipmate-snippets
 	url = git://github.com/spf13/snipmate-snippets.git
@@ -37,6 +34,15 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git://github.com/spf13/vim-markdown.git
-[submodule ".vim/bundle/easytags"]
-	path = .vim/bundle/easytags
-	url = http://github.com/spf13/vim-easytags.git
+[submodule ".vim/bundle/vim-colors"]
+	path = .vim/bundle/vim-colors
+	url = git@github.com:cybo42/vim-colors.git
+[submodule ".vim/bundle/2.slimv"]
+	path = .vim/bundle/2.slimv
+	url = https://github.com/vim-scripts/slimv.vim.git
+[submodule ".vim/bundle/1.vimclojure"]
+	path = .vim/bundle/1.vimclojure
+	url = https://github.com/vim-scripts/VimClojure.git
+[submodule ".vim/bundle/vim-screen-slime"]
+	path = .vim/bundle/vim-screen-slime
+	url = git@github.com:cybo42/vim-screen-slime.git

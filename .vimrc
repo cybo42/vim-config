@@ -1,12 +1,6 @@
 " Modeline and Notes {
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
-"
-" 	This is the personal .vimrc file of Steve Francia.
-" 	While much of it is beneficial for general use, I would
-" 	recommend picking out the parts you want and understand.
-"
-" 	You can find me at http://spf13.com
-" }
+"}
 
 " Environment {
 	" Basics {
@@ -28,12 +22,15 @@
 	" }
 " } 
 	
+let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
+let g:vimclojure#ParenRainbow=1 
 " General {
-	set background=dark         " Assume a dark background
-	set term=builtin_ansi       " Make arrow and other keys work
+	"set background=dark         " Assume a dark background
+	"set term=builtin_ansi       " Make arrow and other keys work
 	filetype plugin indent on  	" Automatically detect file types.
+	"filetype plugin on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
-	set mouse=a					" automatically enable mouse usage
+	"set mouse=a					" automatically enable mouse usage
 	"set autochdir 				" always switch to the current file directory.. 
 	" not every vim is compiled with this, use the following line instead
 	" If you use command-t plugin, it conflicts with this, comment it out.
@@ -41,13 +38,13 @@
 	scriptencoding utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
 	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
-	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
-	set virtualedit=onemore 	   	" allow for cursor beyond last character
+	"set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
+	"set virtualedit=onemore 	   	" allow for cursor beyond last character
 	set history=1000  				" Store a ton of history (default is 20)
-	set spell 		 	        	" spell checking on
+	"set spell 		 	        	" spell checking on
 	
 	" Setting up the directories {
-		set backup 						" backups are nice ...
+		"set backup 						" backups are nice ...
 		set backupdir=$HOME/.vimbackup//  " but not when they clog .
 		set directory=$HOME/.vimswap// 	" Same for swap files
 		set viewdir=$HOME/.vimviews// 	" same for view files
@@ -62,13 +59,13 @@
 " }
 
 " Vim UI {
-	color molokai     	       		" load a colorscheme
+	"color desert     	       		" load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
-	set cursorline  				" highlight current line
-	hi cursorline guibg=#333333 	" highlight bg color of current line
-	hi CursorColumn guibg=#333333   " highlight cursor
+	set nocursorline  				" highlight current line
+	"hi cursorline guibg=#333333 	" highlight bg color of current line
+	"hi CursorColumn guibg=#333333   " highlight cursor
 
 	if has('cmdline_info')
 		set ruler                  	" show the ruler
@@ -78,10 +75,14 @@
 	endif
 
 	if has('statusline')
-		set laststatus=1           	" show statusline only if there are > 1 windows
+		"set laststatus=1           	" show statusline only if there are > 1 windows
 		" Use the commented line if fugitive isn't installed
-		"set statusline=%<%f\ %=\:\b%n%y%m%r%w\ %l,%c%V\ %P " a statusline, also on steroids
-		set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+		"set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+		set cmdheight=2
+		set laststatus=2
+		" set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
+		set statusline=[%l,%c\][\%{&ff}]\%y\ %f\ %r%h%w
+
 	endif
 
 	set backspace=indent,eol,start 	" backspace for dummys
@@ -98,19 +99,20 @@
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
 	set scrolloff=3 				" minimum lines to keep above and below cursor
-	set foldenable  				" auto fold code
-	set gdefault					" the /g flag on :s substitutions by default
+	"set foldenable  				" auto fold code
+	"set gdefault					" the /g flag on :s substitutions by default
 
 " }
 
 " Formatting {
-	set nowrap                     	" wrap long lines
+	"set nowrap                     	" wrap long lines
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
-	set noexpandtab 	       		" tabs are tabs, not spaces
-	set tabstop=4 					" an indentation every four columns
+	set shiftwidth=2               	" use indents of 4 spaces
+	"set noexpandtab 	       		" tabs are tabs, not spaces
+	set expandtab 	       		" tabs are tabs, not spaces
+	set tabstop=2 					" an indentation every four columns
 	"set matchpairs+=<:>            	" match, to be used with % 
-	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
+	set pastetoggle=<F3>          	" pastetoggle (sane indentation on pastes)
 	"set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 " }
 
@@ -129,11 +131,11 @@
 	map <S-L> gt
 
 	" Stupid shift key fixes
-	cmap W w 						
-	cmap WQ wq
-	cmap wQ wq
-	cmap Q q
-	cmap Tabe tabe
+	"cmap W w 						
+	"cmap WQ wq
+	"cmap wQ wq
+	"cmap Q q
+	"cmap Tabe tabe
 
 	" Yank from the cursor to the end of the line, to be consistent with C and D.
 	nnoremap Y y$
@@ -247,42 +249,23 @@
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
+  " Clojure {
+    let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
+    let g:vimclojure#ParenRainbow=1 
+  " }
 " }
 
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
+		colorscheme Brookstream
+		set guifont=Monaco:h12.00
+		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
 		set lines=40               	" 40 lines of text instead of 24,
+		set vb
+	else
+		colorscheme desert
 	endif
 " }
-
-" Not quite working yet
-"function InitializeDirectories()
-  "let separator = "."
-  "let parent = $HOME 
-  "let prefix = '.vim'
-  "let dir_list = { 
-			  "\ 'backup': 'backupdir', 
-			  "\ 'views': 'viewdir', 
-			  "\ 'swap': 'directory' }
-
-  "for [dirname, settingname] in items(dir_list)
-	  "let directory = parent . '/' . prefix . dirname . "/"
-	  "if exists("*mkdir")
-		  "if !isdirectory(directory)
-			  "call mkdir(directory)
-		  "endif
-	  "endif
-	  "if !isdirectory(directory)
-		  "echo "Warning: Unable to create backup directory: " . directory
-		  "echo "Try: mkdir -p " . directory
-	  "else  
-		  "" Adding an extra trailing slash so it stores the path and not just the
-		  "" filename so there aren't collisions for backups
-		  "" Windows Vista / 7 has UAC issues, so setting $temp as fallback
-		  "exec "set " . settingname . "='" . directory . "/'," . $temp
-	  "endif
-  "endfor
-"endfunction
-"call InitializeDirectories() 
+"
