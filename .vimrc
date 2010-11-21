@@ -24,7 +24,7 @@
 	
 " General {
 	"set background=dark         " Assume a dark background
-	"set term=builtin_ansi       " Make arrow and other keys work
+	set term=builtin_ansi       " Make arrow and other keys work
 	filetype plugin indent on  	" Automatically detect file types.
 	"filetype plugin on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
@@ -51,8 +51,10 @@
 		silent execute '!mkdir -p $HOME/.vimbackup'
 		silent execute '!mkdir -p $HOME/.vimswap'
 		silent execute '!mkdir -p $HOME/.vimviews'
-		au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
-		au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
+		
+		" Causes bad exit value for some reason"
+		"au BufWinLeave * silent! mkview  "make vim save view (state) (folds, cursor, etc)
+		"au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" }
 " }
 
@@ -148,12 +150,6 @@
 
 " Plugins {
 
-	" VCSCommand {
-		let b:VCSCommandMapPrefix=',v'
-		let b:VCSCommandVCSType='git'
-		""let mapleader = "-"
-	" } 
-	
 	" PIV {
 		let g:DisableAutoPHPFolding = 0
 	" }
