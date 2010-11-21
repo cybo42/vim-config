@@ -225,17 +225,6 @@
 		set tags=./tags;/,~/.vimtags
 	" }
 
-	" EasyTags {
-		let g:easytags_cmd = '/usr/local/bin/ctags'
-	" }
-
-	" Delimitmate {
-		au FileType * let b:delimitMate_autoclose = 1
-
-		" If using html auto complete (complete closing tag)
-        au FileType xml,html,xhtml let b:delimitMate_matchpairs = "(:),[:],{:}"
-	" }
-	
 	" AutoCloseTag {
 		" Make it so AutoCloseTag works for xml and xhtml files as well
 		au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
@@ -247,6 +236,7 @@
 		" Shortcut for reloading snippets, useful when developing
 		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
 	" }
+  
 	" Clojure {
 		let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
 		let g:vimclojure#ParenRainbow=1 
