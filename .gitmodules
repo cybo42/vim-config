@@ -43,3 +43,9 @@
 [submodule ".vim/bundle/vim-screen-slime"]
 	path = .vim/bundle/vim-screen-slime
 	url = git@github.com:cybo42/vim-screen-slime.git
+[submodule ".vim/bundle/bufexplorer"]
+	path = .vim/bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule ".vim/bundle/speeddating"]
+	path = .vim/bundle/speeddating
+	url = https://github.com/vim-scripts/speeddating.vim.git
