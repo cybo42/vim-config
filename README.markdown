@@ -1,7 +1,7 @@
-# spf13-vim
+# vim-config
 
-## My Vim config.
-The ultimate vim configuration.
+
+## Modular VIM Configuration
 
 This configuration makes use of [pathogen](http://www.vim.org/scripts/script.php?script_id=2332) to have
 a well organized vim directory.
@@ -10,8 +10,11 @@ It also heavily uses vim submodules where possible for all plugins. This makes f
 
 It also works well on Windows, Linux and OSX without even modifying directories. Just clone and run.
 
-## The vimrc file
+## Credit  
+This setup was originally forked from: [spf13/spf13-vim](https://github.com/spf13/spf13-vim) and
+customized for my purposes.
 
+## The vimrc file
 The vimrc file is suited to programming. It is very well organized and folds in sections.
 Each section is labeled and each option is commented.
 
@@ -24,35 +27,16 @@ It fixes many of the inconveniences of vanilla vim including
    * omnicomplete
    * line numbers
    * syntax highlighting
-   * A better ruler & status line
-   * & more
  * Configuring included plugins
 
 ## Plugins
 I compile and configure a few popular vim plugins, colors, snippets, etc
 
-Most of the bundles are git submodules facilitating easy updating and configuration. 
-
- * [PIV (PHP Integration for VIM)](http://github.com/spf13/PIV)
- * [Snipmate](http://github.com/msanders/snipmate.vim)
- * [NerdCommenter](http://github.com/scrooloose/nerdcommenter)
- * [NerdTree](http://github.com/scrooloose/nerdtree)
- * [SuperTab](http://www.vim.org/scripts/script.php?script_id=1643)
- * [Fugitive](http://github.com/tpope/vim-fugitive)
- * [DelimitMate](http://github.com/Raimondi/delimitMate)
- * [Matchit](http://www.vim.org/scripts/script.php?script_id=39)
- * [CheckSyntax](http://www.vim.org/scripts/script.php?script_id=1431)
- * [Surrounding](http://github.com/msanders/vim-files/blob/master/plugin/surrounding.vim)
- * [AutoCloseTag](http://www.vim.org/scripts/script.php?script_id=2591)
-
-## Snippets
-
-It also contains a very complete set of [snippets](http://github.com/spf13/snipmate-snippets) for use with snipmate.
 
 ## Installation
 
-    git clone git://github.com/spf13/spf13-vim.git
-    cd spf13-vim
+    git clone git@github.com:cybo42/vim-config.git
+    cd vim-config
     git submodule update --init
 
 I setup symlinks after this so I can maintain the repo outside of my actual config location.
@@ -60,6 +44,6 @@ I setup symlinks after this so I can maintain the repo outside of my actual conf
 Use ln -s on mac/unix or mklink on windows.
 
     cd ~
-    ln -s /path/to/spf13-vim/vimrc .vimrc
-    ln -s /path/to/spf13-vim/vim .vim
+    ln -s /path/to/vim-config/vimrc .vimrc
+    ln -s /path/to/vim-config/vim .vim
 
