@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/speeddating"]
 	path = .vim/bundle/speeddating
 	url = https://github.com/vim-scripts/speeddating.vim.git
+[submodule ".vim/bundle/scala-vim"]
+	path = .vim/bundle/scala-vim
+	url = https://github.com/akhil/scala-vim-bundle.git
