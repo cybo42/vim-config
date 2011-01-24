@@ -96,7 +96,7 @@
 	set smartcase 					" case sensitive when uc present
 	set wildmenu 					" show list instead of just completing
 	set wildmode=list:longest,full 	" comand <Tab> completion, list matches, then longest common part, then all.
-	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
+	"set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
 	set scrolloff=3 				" minimum lines to keep above and below cursor
 	"set foldenable  				" auto fold code
@@ -247,7 +247,7 @@
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
 		colorscheme Brookstream
-		set guifont=Monaco:h12.00
+		set guifont=Monaco:h10.00
 		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
 		set lines=40               	" 40 lines of text instead of 24,
