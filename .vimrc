@@ -81,7 +81,7 @@
 		set cmdheight=2
 		set laststatus=2
 		" set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
-		set statusline=[%l,%c\][\%{&ff}]\%y\ %f\ %r%h%w
+		set statusline=[%l,%c\][\%{&ff}]\%y\ %f\ %r%h%w 
 
 	endif
 
@@ -240,6 +240,10 @@
 	" Clojure {
 		let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
 		let g:vimclojure#ParenRainbow=1 
+
+    let g:vimclojure#WantNailgun = 1 
+    let g:vimclojure#NailgunClient = "/Users/cybo/apps/vimclojure-nailgun-client/ng"
+    
 	" }
 " }
 
@@ -247,7 +251,9 @@
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
 		colorscheme Brookstream
-		set guifont=Monaco:h10.00
+		"set guifont=Monaco:h10.00
+    set guifont=Anonymous:h18
+   
 		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
 		set lines=40               	" 40 lines of text instead of 24,

@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/scala-vim"]
 	path = .vim/bundle/scala-vim
 	url = https://github.com/akhil/scala-vim-bundle.git
+[submodule ".vim/bundle/vcscommand"]
+	path = .vim/bundle/vcscommand
+	url = https://github.com/vim-scripts/vcscommand.vim.git
