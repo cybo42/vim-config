@@ -208,6 +208,10 @@
 		hi PmenuSbar  guifg=#8A95A7 guibg=#F8F8F8 gui=NONE ctermfg=darkcyan ctermbg=lightgray cterm=NONE
 		hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=darkcyan cterm=NONE
 
+	  " Misc Shortcuts {
+		cnoreabbr snw set nowrap 
+    " }
+  
 		" some convenient mappings 
 		inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
 		inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
