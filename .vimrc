@@ -254,9 +254,9 @@
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
-		colorscheme Brookstream
-		"set guifont=Monaco:h10.00
-    set guifont=Anonymous:h18
+		colorscheme brookstream
+		set guifont=Monaco:h10.00
+    "set guifont=Anonymous:h18
    
 		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
