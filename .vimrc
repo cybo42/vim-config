@@ -19,6 +19,7 @@
 	" The next two lines ensure that the ~/.vim/bundle/ system works
 		runtime! autoload/pathogen.vim
 		silent! call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
 	" }
 " } 
 	
@@ -254,9 +255,10 @@
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
 	if has('gui_running')
-		colorscheme brookstream
-		set guifont=Monaco:h10.00
-    "set guifont=Anonymous:h18
+		colorscheme darkblue_custom
+		"set guifont=Monaco:h10.00
+    set guifont=Anonymous:h16
+    set transparency=10
    
 		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
