@@ -254,6 +254,7 @@
 
 " GUI Settings {
 	" GVIM- (here instead of .gvimrc)
+  set clipboard=unnamed
 	if has('gui_running')
 		colorscheme darkblue_custom
 		"set guifont=Monaco:h10.00
