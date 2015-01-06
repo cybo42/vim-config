@@ -256,10 +256,10 @@
 	" GVIM- (here instead of .gvimrc)
   set clipboard=unnamed
 	if has('gui_running')
-		colorscheme darkblue_custom
+		colorscheme argonaut
 		"set guifont=Monaco:h10.00
-    set guifont=Anonymous:h16
-    set transparency=10
+    set guifont=Consolas:h14
+    "set transparency=5
    
 		set gcr=a:blinkon0
 		set guioptions-=T          	" remove the toolbar
