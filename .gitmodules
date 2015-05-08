@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/AnsiEsc"]
 	path = .vim/bundle/AnsiEsc
 	url = https://github.com/vim-scripts/AnsiEsc.vim.git
+[submodule ".vim/bundle/vim-go"]
+	path = .vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
