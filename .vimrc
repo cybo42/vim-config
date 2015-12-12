@@ -29,7 +29,8 @@
 	filetype plugin indent on  	" Automatically detect file types.
 	"filetype plugin on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
-	"set mouse=a					" automatically enable mouse usage
+	set mouse=a					" automatically enable mouse usage
+  set ttymouse=xterm
 	"set autochdir 				" always switch to the current file directory.. 
 	" not every vim is compiled with this, use the following line instead
 	" If you use command-t plugin, it conflicts with this, comment it out.
@@ -266,7 +267,8 @@
 		set lines=40               	" 40 lines of text instead of 24,
 		set vb
 	else
-		colorscheme desert
+		colorscheme default
+    set visualbell 
 	endif
 " }
 "
