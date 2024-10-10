@@ -15,12 +15,6 @@
 		endif
 	" }
 
-	" Setup Bundle Support {
-	" The next two lines ensure that the ~/.vim/bundle/ system works
-		runtime! autoload/pathogen.vim
-		silent! call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
-	" }
 " } 
 	
 " General {
@@ -30,13 +24,14 @@
 	"filetype plugin on  	" Automatically detect file types.
 	syntax on 					" syntax highlighting
 	set mouse=a					" automatically enable mouse usage
-  set ttymouse=xterm
+    set ttymouse=xterm
 	"set autochdir 				" always switch to the current file directory.. 
 	" not every vim is compiled with this, use the following line instead
 	" If you use command-t plugin, it conflicts with this, comment it out.
      "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 	scriptencoding utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
+  set nofixeol                   " don't try to fix end of line newlines
 	set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
 	"set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 	"set virtualedit=onemore 	   	" allow for cursor beyond last character
@@ -162,57 +157,19 @@
 	" }
 
 	" Misc { 
-		:map <C-F10> <Esc>:vsp<CR>:VTree<CR>
-		" map Control + F10 to Vtree
-
 		let g:checksyntax_auto = 0
-
-		"comment out line(s) in visual mode
-		vmap  o  :call NERDComment(1, 'toggle')<CR>
-		let g:NERDShutUp=1
 
 		let b:match_ignorecase = 1
 	" }	
 	
 	" NERDTRee {
+		"comment out line(s) in visual mode
+		vmap  o  :call NERDComment(1, 'toggle')<CR>
+		let g:NERDShutUp=1
+
 		cnoreabbr nt NERDTree 
 	" }
 
-	" ShowMarks {
-		let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		" Don't leave on by default, use :ShowMarksOn to enable
-		let g:showmarks_enable = 0
-		" For marks a-z
-		highlight ShowMarksHLl gui=bold guibg=LightBlue guifg=Blue
-		" For marks A-Z
-		highlight ShowMarksHLu gui=bold guibg=LightRed guifg=DarkRed
-		" For all other marks
-		highlight ShowMarksHLo gui=bold guibg=LightYellow guifg=DarkYellow
-		" For multiple marks on the same line.
-		highlight ShowMarksHLm gui=bold guibg=LightGreen guifg=DarkGreen
-	" }
-	
-	" OmniComplete {
-		"if has("autocmd") && exists("+omnifunc")
-			"autocmd Filetype *
-				"\if &omnifunc == "" |
-				"\setlocal omnifunc=syntaxcomplete#Complete |
-				"\endif
-		"endif
-
-		" Popup menu hightLight Group
-		"highlight Pmenu 	ctermbg=13 	guibg=DarkBlue
-		highlight PmenuSel 	ctermbg=7 	guibg=DarkBlue 		guifg=LightBlue
-		"highlight PmenuSbar ctermbg=7 	guibg=DarkGray
-		"highlight PmenuThumb 			guibg=Black
-
-		hi Pmenu  guifg=#000000 guibg=#F8F8F8 ctermfg=black ctermbg=Lightgray
-		hi PmenuSbar  guifg=#8A95A7 guibg=#F8F8F8 gui=NONE ctermfg=darkcyan ctermbg=lightgray cterm=NONE
-		hi PmenuThumb  guifg=#F8F8F8 guibg=#8A95A7 gui=NONE ctermfg=lightgray ctermbg=darkcyan cterm=NONE
-
-	  " Misc Shortcuts {
-		cnoreabbr snw set nowrap 
-    " }
   
 		" some convenient mappings 
 		inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
@@ -231,26 +188,14 @@
 		set tags=./tags;/,~/.vimtags
 	" }
 
-	" AutoCloseTag {
-		" Make it so AutoCloseTag works for xml and xhtml files as well
-		au FileType xhtml,xml ru ftplugin/html/autoclosetag.vim
-	" }
+	" Vim-Picker {
+      try 
+	      source ~/.vim/pack/plugins/vim-picker.vim
+      catch
+	      echo v:exception
+      endtry 
+	"}
 
-	" SnipMate {
-		" Setting the author var
-		let g:snips_author = 'Steve Francia <steve.francia@gmail.com>'
-		" Shortcut for reloading snippets, useful when developing
-		nnoremap ,smr <esc>:exec ReloadAllSnippets()<cr>
-	" }
-  
-	" Clojure {
-		let g:vimclojure#HighlightBuiltins=1 " Highlight Clojure's builtins
-		let g:vimclojure#ParenRainbow=1 
-
-    let g:vimclojure#WantNailgun = 1 
-    let g:vimclojure#NailgunClient = "/Users/cybo/apps/vimclojure-nailgun-client/ng"
-    
-	" }
 " }
 
 " GUI Settings {
